@@ -1,12 +1,8 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { StyleSheet } from 'react-native';
 
-// imported screens
-import LoginScreen from '../screens/login/LoginScreen';
-import RegisterScreen from '../screens/login/RegisterScreen';
 import AboutAdmin from '../screens/mainscreens/AboutAdmin';
-import StoriesAdmin from '../screens/mainscreens/StoriesAdmin';
+import { StoriesNavigator } from './Stories.navigation';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -70,19 +66,10 @@ function Topnavigation() {
 				}
 			}}
 		>
-			<Tab.Screen name='LoginScreen' component={LoginScreen} />
-			<Tab.Screen name='RegisterScreen' component={RegisterScreen} />
 			<Tab.Screen name='AboutAdmin' component={AboutAdmin} />
-			<Tab.Screen name='StoriesAdmin' component={StoriesAdmin} />
+			<Tab.Screen name='StoriesAdmin' component={StoriesNavigator} />
 		</Tab.Navigator>
 	);
 }
 
 export default Topnavigation;
-
-const Styles = StyleSheet.create({
-	navbar: {
-		borderRadius: 20,
-		width: '80%'
-	}
-});

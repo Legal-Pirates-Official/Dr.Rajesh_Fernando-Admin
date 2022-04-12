@@ -1,6 +1,7 @@
 const db = require('../database');
 
 exports.storiesGet = async (req, res) => {
+	console.log('hii');
 	await db.query('SELECT * FROM stories', (err, response) => {
 		if (err) {
 			console.log(err);
